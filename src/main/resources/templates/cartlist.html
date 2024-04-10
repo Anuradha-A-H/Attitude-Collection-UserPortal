@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org" >
+<head>
+    <title>Shopping Cart</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <link rel="stylesheet" th:href="@{/css/cartstyle.css}">
+</head>
+<body>
+<main class="page">
+    <section class="shopping-cart dark">
+        <div class="container">
+            <div class="block-heading">
+                <h2 style="color: black;">Attitude Collection</h2>
+
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc quam urna, dignissim nec auctor in, mattis vitae leo.</p>
+            </div>
+            <div class="content">
+                <div class="row">
+                    <div class="col-md-12 col-lg-8">
+                        <div class="items">
+<!--                            <div class="product">-->
+<!--                                <div class="row">-->
+<!--                                    <div class="col-md-3">-->
+<!--                                        <img class="img-fluid mx-auto d-block image" src="assets/img/image.jpg">-->
+<!--                                    </div>-->
+<!--                                    <div class="col-md-8">-->
+<!--                                        <div class="info">-->
+<!--                                            <div class="row">-->
+<!--                                                <div class="col-md-5 product-name">-->
+<!--                                                    <div class="product-name">-->
+<!--                                                        <a href="#">Lorem Ipsum dolor</a>-->
+<!--                                                        <div class="product-info">-->
+<!--                                                            <div>Display: <span class="value">5 inch</span></div>-->
+<!--                                                            <div>RAM: <span class="value">4GB</span></div>-->
+<!--                                                            <div>Memory: <span class="value">32GB</span></div>-->
+<!--                                                        </div>-->
+<!--                                                    </div>-->
+<!--                                                </div>-->
+<!--                                                <div class="col-md-4 quantity">-->
+<!--                                                    <label for="quantity">Quantity:</label>-->
+<!--                                                    <input id="quantity" type="number" value ="1" class="form-control quantity-input">-->
+<!--                                                </div>-->
+<!--                                                <div class="col-md-3 price">-->
+<!--                                                    <span>$120</span>-->
+<!--                                                </div>-->
+<!--                                            </div>-->
+<!--                                        </div>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                            <div class="product">-->
+<!--                                <div class="row">-->
+<!--                                    <div class="col-md-3">-->
+<!--                                        <img class="img-fluid mx-auto d-block image" src="assets/img/image.jpg">-->
+<!--                                    </div>-->
+<!--                                    <div class="col-md-8">-->
+<!--                                        <div class="info">-->
+<!--                                            <div class="row">-->
+<!--                                                <div class="col-md-5 product-name">-->
+<!--                                                    <div class="product-name">-->
+<!--                                                        <a href="#">Lorem Ipsum dolor</a>-->
+<!--                                                        <div class="product-info">-->
+<!--                                                            <div>Display: <span class="value">5 inch</span></div>-->
+<!--                                                            <div>RAM: <span class="value">4GB</span></div>-->
+<!--                                                            <div>Memory: <span class="value">32GB</span></div>-->
+<!--                                                        </div>-->
+<!--                                                    </div>-->
+<!--                                                </div>-->
+<!--                                                <div class="col-md-4 quantity">-->
+<!--                                                    <label for="quantity">Quantity:</label>-->
+<!--                                                    <input id="quantity" type="number" value ="1" class="form-control quantity-input">-->
+<!--                                                </div>-->
+<!--                                                <div class="col-md-3 price">-->
+<!--                                                    <span>$120</span>-->
+<!--                                                </div>-->
+<!--                                            </div>-->
+<!--                                        </div>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                            <div class="product">-->
+<!--                                <div class="row">-->
+<!--                                    <div class="col-md-3">-->
+<!--                                        <img class="img-fluid mx-auto d-block image" src="assets/img/image.jpg">-->
+<!--                                    </div>-->
+<!--                                    <div class="col-md-8">-->
+<!--                                        <div class="info">-->
+<!--                                            <div class="row">-->
+<!--                                                <div class="col-md-5 product-name">-->
+<!--                                                    <div class="product-name">-->
+<!--                                                        <a href="#">Lorem Ipsum dolor</a>-->
+<!--                                                        <div class="product-info">-->
+<!--                                                            <div>Display: <span class="value">5 inch</span></div>-->
+<!--                                                            <div>RAM: <span class="value">4GB</span></div>-->
+<!--                                                            <div>Memory: <span class="value">32GB</span></div>-->
+<!--                                                        </div>-->
+<!--                                                    </div>-->
+<!--                                                </div>-->
+<!--                                                <div class="col-md-4 quantity">-->
+<!--                                                    <label for="quantity">Quantity:</label>-->
+<!--                                                    <input id="quantity" type="number" value ="1" class="form-control quantity-input">-->
+<!--                                                </div>-->
+<!--                                                <div class="col-md-3 price">-->
+<!--                                                    <span>$120</span>-->
+<!--                                                </div>-->
+<!--                                            </div>-->
+<!--                                        </div>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                            </div>-->
+                        </div>
+                    </div>
+                    <div class="col-md-12 col-lg-4">
+                        <div class="summary">
+                            <h3>Summary</h3>
+                            <div class="summary-item"><span class="text">Subtotal</span><span class="price amt">$360</span></div>
+                            <div class="summary-item"><span class="text">Discount</span><span class="price">0</span></div>
+                            <div class="summary-item"><span class="text">Shipping</span><span class="price">0</span></div>
+                            <div class="summary-item"><span class="text">Total</span><span class="price amt">$360</span></div>
+                            <a th:href="@{/attitudeCollection/orderit}" class="btn btn-dark btn-lg btn-block">Checkout</a>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<script>
+    // Load card items from local storage
+    $(document).ready(function() {
+        var cartItems = JSON.parse(localStorage.getItem('cart')) || [];
+        var itemsContainer = $('.items');
+
+        // Loop through each item in the cart and append it to the items container
+        var totalamount = 0;
+        cartItems.forEach(function(item) {
+        totalamount += item.price * item.quantity;
+            var productHTML = `
+                 <div class="product">
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <img class="img-fluid mx-auto d-block image" src="data:image/jpeg;base64,${item.image}">
+                                    </div>
+                                    <div class="col-md-8">
+                                        <div class="info">
+                                            <div class="row">
+                                                <div class="col-md-5 product-name">
+                                                    <div class="product-name">
+                                                        <a href="#">${item.name}</a>
+                                                        <div class="product-info">
+                                                            <div>Display: <span class="value">5 inch</span></div>
+                                                            <div>RAM: <span class="value">4GB</span></div>
+                                                            <div>Memory: <span class="value">32GB</span></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                               <div class="col-md-4 quantity">
+                                                    <label for="quantity">Quantity:</label>
+                                                    <input id="quantity-${item.id}" type="number" value="${item.quantity}" class="form-control quantity-input" data-id="${item.id}">
+                                                </div>
+                                                <div class="col-md-2 price">
+                                                    <span>${item.price}/-</span>
+                                                </div>
+                                                 <div class="col-md-1 delete">
+                                        <button class="btn btn-outline-danger delete-btn" data-id="${item.id}">
+                                            <i class="fas fa-times"></i>
+                                        </button>
+                                    </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+            `;
+            itemsContainer.append(productHTML);
+             $('.amt').text(totalamount);
+
+        });
+
+
+
+
+
+
+    $('.quantity-input').change(function() {
+        var itemId = $(this).data('id');
+        var newQuantity = parseInt($(this).val());
+         var cartItems = JSON.parse(localStorage.getItem('cart')) || [];
+
+        var itemToUpdate = cartItems.find(item => item.id === itemId);
+
+        if (itemToUpdate) {
+        // Update the quantity of the item
+            itemToUpdate.quantity = newQuantity;
+
+        // Update the localStorage with the updated cartItems array
+            localStorage.setItem('cart', JSON.stringify(cartItems));
+
+        // Update the total amount display
+            updateTotalAmount();
+            }
+
+    });
+
+
+     function updateTotalAmount() {
+     var cartItems = JSON.parse(localStorage.getItem('cart')) || [];
+        amount = 0;
+        cartItems.forEach(function(item) {
+            amount += item.price * item.quantity;
+        });
+        $('.amt').text(amount);
+
+    }
+
+
+
+
+
+
+    $('.delete-btn').click(function() {
+            var itemId = $(this).data('id');
+            deleteItemFromLocalStorage(itemId);
+            // Remove the product item from the DOM
+            $(this).closest('.product').remove();
+        });
+
+      });
+</script>
+</body>
+</html>

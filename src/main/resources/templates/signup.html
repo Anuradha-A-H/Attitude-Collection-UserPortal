@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invoice</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" th:href="@{/css/trakeorder.css}">
+</head>
+<body>
+
+<section class="vh-100" style="background-color: #eee;">
+    <div class="container h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-lg-12 col-xl-11">
+                <div class="card text-black" style="border-radius: 25px;">
+                    <div class="card-body p-md-5">
+                        <div class="row justify-content-center">
+                            <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
+
+                                <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Sign up</p>
+                                <div th:if="${error != null}" class="alert alert-danger" role="alert">
+                                    [[${error}]]
+                                </div>
+                                    <form action="/attitudeCollection/register" method="post">
+                                        <div class="form-row">
+                                            <div class="form-group col-md-6">
+                                                <label for="inputEmail44">First Name</label>
+                                                <input type="text" class="form-control" id="inputEmail44" placeholder="firstName" name="firstName">
+                                            </div>
+                                            <div class="form-group col-md-6">
+                                                <label for="inputState2">Last Name</label>
+                                                <input type="text" class="form-control" id="inputState2" placeholder="lastName " name="lastName">
+                                            </div>
+                                        </div>
+                                        <div class="form-row">
+                                            <div class="form-group col-md-6">
+                                                <label for="inputStates">Gender</label>
+                                                <select id="inputStates" class="form-control" name="gender">
+                                                    <option value="MALE">Male</option>
+                                                    <option value="FEMALE">Female</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group col-md-6">
+                                                <label for="inputState">Date Of birth</label>
+                                                <input type="date" class="form-control" id="inputState" placeholder="Date Of birth " name="dateOfBirth">
+                                            </div>
+                                        </div>
+
+                                        <div class="form-row">
+                                            <div class="form-group col-md-6">
+                                                <label for="inputEmail6">Email</label>
+                                                <input type="email" class="form-control" id="inputEmail6" placeholder="Email" name="email">
+                                            </div>
+                                            <div class="form-group col-md-6">
+                                                <label for="inputState1">Profile Image</label>
+                                                <input type="file" class="form-control" id="inputState1" placeholder="Profile Image" name="profile">
+                                            </div>
+                                        </div>
+
+                                        <div class="col py-3">
+                                            <button type="submit" class="btn btn-primary btn-lg">Submit</button>
+                                        </div>
+                                    </form>
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+</body>
+</html>

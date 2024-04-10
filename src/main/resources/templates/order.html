@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en"  xmlns:th="www.thymeleaf.org" th:replace="~{navbar :: layout(~{::title}, ~{::section})}">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+
+    <title>Shop order - Attitude Collection</title>
+</head>
+<body>
+<section>
+    <div class="row">
+        <!-- Grow In Utility -->
+        <div class="col-lg-12">
+
+            <div class="card position-relative">
+                <header class="bg-dark py-5">
+                    <div class="container px-4 px-lg-5 my-5">
+                        <div class="text-center text-white">
+                            <h1 class="display-4 fw-bolder">Shop in style</h1>
+                            <p class="lead fw-normal text-white-50 mb-0">With this shop hompeage template</p>
+                        </div>
+                    </div>
+                </header>
+                <div class="card-body">
+                    <div th:if="${error != null}" class="alert alert-danger" role="alert">
+                        Error: [[${error}]]
+                    </div>
+                    <form action="/attitudeCollection/placeorder" id="orderForm" method="post">
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <div class="form-group col-md-6">
+                                <label for="address">Address</label>
+                                <input type="text" class="form-control" id="address" placeholder="address" name="address">
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label for="inputState">Pincode</label>
+                                    <input type="text" class="form-control" id="inputState" placeholder="Pincode" name="pincode">
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="inputState">price</label>
+                                <input type="number" class="form-control  pricerupees" id="inputEmail4" placeholder="Price" name="totalAmount" readonly>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="inputEmail6">Order Date</label>
+                                <input type="date" class="form-control" id="inputEmail6" placeholder="date" name="deliveredDate" >
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="inputStatee">Phone No</label>
+                                <input type="number" class="form-control" id="inputStatee" placeholder="phoneNo" name="phoneNo">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="inputEmail7">Description</label>
+                                <textarea class="form-control" id="inputEmail7" rows="3" placeholder="Enter description" name="description"></textarea>
+                            </div>
+                        </div>
+                        <div class="col py-3">
+                            <button type="submit" class="btn btn-primary btn-lg">Place Order</button>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        function appendLocalStorageDataToForm() {
+             var formData = new FormData(document.getElementById('orderForm'));
+            var localStorageData = JSON.parse(localStorage.getItem('cart'));
+            var totalval = 0;
+            var ordersfromLocalStorage = [];
+                localStorageData.forEach(function(item, index) {
+                ordersfromLocalStorage.push({"productId":item.id,"quantity":item.quantity});
+                totalval += item.quantity * item.price;
+                });
+                var priceInput = document.getElementById('inputEmail4');
+            priceInput.value = totalval;
+            priceInput.textContent = totalval;
+
+            console.log(ordersfromLocalStorage);
+             var input = document.createElement('input');
+        input.type = 'hidden';
+        input.name = 'ordersfromLocalStorage';
+        input.value = JSON.stringify(ordersfromLocalStorage);
+        document.getElementById('orderForm').appendChild(input);
+        localStorage.clear();
+    }
+
+        appendLocalStorageDataToForm();
+
+    </script>
+</section>
+
+</body>
+</html>
